@@ -1,5 +1,6 @@
 import { useLang, useTheme } from '../context/hooks'
 import { SUPPORTED_LANGS, t } from '../i18n/translations'
+import { ArakatLogo } from './ArakatLogo'
 
 function MoonIcon() {
   return (
@@ -31,7 +32,10 @@ export function Nav() {
 
   return (
     <nav className="nav" role="navigation">
-      <span className="nav__brand">{t(lang, 'nav_brand')}</span>
+      <a href="/" className="nav__brand" aria-label="Arakat">
+        <ArakatLogo size={24} className="nav__logo" />
+        <span>{t(lang, 'nav_brand')}</span>
+      </a>
       <div className="nav__tools">
         <div className="lang" role="group" aria-label={t(lang, 'aria_lang')}>
           {SUPPORTED_LANGS.map((l) => (

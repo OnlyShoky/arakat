@@ -79,9 +79,23 @@ button { font-family: inherit; }
   border-bottom: 1px solid var(--line);
 }
 .nav__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   font: 700 15px / 1 var(--font-sans);
   letter-spacing: 0.02em;
   color: var(--ink);
+  transition: opacity 0.2s;
+}
+.nav__brand:hover {
+  opacity: 0.85;
+}
+.nav__logo {
+  color: var(--ink);
+  transition: transform 0.25s ease;
+}
+.nav__brand:hover .nav__logo {
+  transform: translateY(-1px);
 }
 .nav__tools {
   display: flex;
@@ -127,7 +141,20 @@ button { font-family: inherit; }
 /* ── Hero ── */
 .hero {
   text-align: center;
-  padding: 84px 0 56px;
+  padding: 72px 0 56px;
+}
+.hero__emblem {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+.hero__logo {
+  color: var(--ink);
+  opacity: 0.95;
+  transition: transform 0.3s ease, color var(--transition);
+}
+.hero__logo:hover {
+  transform: translateY(-3px) scale(1.05);
 }
 .hero__word {
   font: 500 clamp(84px, 17vw, 190px) / 0.9 var(--font-serif);
@@ -346,6 +373,7 @@ a.plat:hover { color: var(--brass); }
 .footer {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   flex-wrap: wrap;
   gap: 14px;
   margin-top: 80px;
@@ -353,6 +381,14 @@ a.plat:hover { color: var(--brass); }
   border-top: 1px solid var(--line);
   color: var(--mut);
   font-size: 14px;
+}
+.footer__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.footer__logo {
+  color: var(--mut);
 }
 .footer__nav {
   display: flex;
