@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Arakat — Made by hand, one app at a time</title>
+<meta name="description" content="Arakat makes free apps and games with no ads and no accounts. Find each one on web, Android and iOS.">
+<link rel="canonical" href="https://arakat.app/">
+<link rel="alternate" hreflang="en" href="https://arakat.app/en/">
+<link rel="alternate" hreflang="es" href="https://arakat.app/es/">
+<link rel="alternate" hreflang="fr" href="https://arakat.app/fr/">
+<link rel="alternate" hreflang="x-default" href="https://arakat.app/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Arakat — Made by hand, one app at a time">
+<meta property="og:description" content="Free apps and games. No ads, no accounts.">
+<meta property="og:url" content="https://arakat.app/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#e6e8e5">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Arakat","url":"https://arakat.app","email":"arakat.contact@gmail.com"}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Hanken+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#e6e8e5;--tx:#262a27;--mut:#666d68;--line:rgba(38,42,39,.18);--fg:#f1efea;
+--b1:#56664f;--b2:#6a4a63;--b3:#3f6168;--b4:#7a5a43}
+:root[data-theme="dark"]{--bg:#121413;--tx:#e6e8e5;--mut:#8d948f;--line:rgba(230,232,229,.16);--fg:#e9e6df;
+--b1:#2f3a2c;--b2:#3e2b3b;--b3:#243a3f;--b4:#44322a}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--tx);font:400 17px/1.65 "Hanken Grotesk",system-ui,sans-serif;-webkit-font-smoothing:antialiased;transition:background .3s,color .3s}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:3px solid currentColor;outline-offset:3px;border-radius:6px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+header{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line);transition:background .3s}
+header .wrap{display:flex;justify-content:space-between;align-items:center;height:64px}
+.brand{font:400 24px "Young Serif",serif}
+.tools{display:flex;gap:12px;align-items:center}
+.lang{display:flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.lang button{all:unset;cursor:pointer;font-size:13px;font-weight:700;padding:6px 12px;color:var(--mut)}
+.lang button+button{border-left:1px solid var(--line)}
+.lang button[aria-pressed="true"]{background:var(--tx);color:var(--bg)}
+.theme{all:unset;cursor:pointer;width:34px;height:34px;border:1px solid var(--line);border-radius:8px;display:grid;place-items:center;color:var(--mut)}
+.theme:hover{color:var(--tx)}
+.hero{padding:96px 0 80px}
+h1{font:400 clamp(44px,8vw,104px)/1.02 "Young Serif",serif;letter-spacing:-.025em;max-width:900px}
+.hero p{margin-top:30px;font-size:20px;color:var(--mut);max-width:560px}
+.facts{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
+.facts span{border:1px solid var(--line);border-radius:8px;padding:6px 14px;font-size:14.5px;font-weight:500}
+.band{background:var(--b);color:var(--fg);padding:88px 0;transition:background .3s}
+.b1{--b:var(--b1)}.b2{--b:var(--b2)}.b3{--b:var(--b3)}.b4{--b:var(--b4)}
+.band .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.top{display:flex;align-items:center;gap:16px;margin-bottom:28px}
+.logo{width:72px;height:72px;border-radius:20px;background:rgba(255,255,255,.12);display:grid;place-items:center;flex:none}
+.top small{font-size:14.5px;font-weight:700;opacity:.78}
+.status{margin-left:auto;font-size:13px;font-weight:700;padding:4px 12px;border:1px solid currentColor;border-radius:999px;opacity:.85}
+.band h2{font:400 clamp(44px,6vw,76px)/1 "Young Serif",serif;letter-spacing:-.02em}
+.band p{margin:22px 0 34px;max-width:440px;font-size:18px;opacity:.86}
+.btns{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;max-width:480px}
+.btn{display:flex;flex-direction:column;gap:2px;padding:14px 16px;border-radius:12px;background:rgba(255,255,255,.1);font-weight:700;font-size:15px;transition:background .2s}
+.btn small{font-weight:500;font-size:12.5px;opacity:.7}
+a.btn{background:var(--fg);color:var(--b)}
+a.btn:hover{background:#fff}
+:root[data-theme="dark"] a.btn:hover{background:#cfccc5}
+.btn.off{border:1px dashed rgba(255,255,255,.35);background:transparent;opacity:.75}
+.shot{display:flex;justify-content:center;position:relative;height:420px;align-items:center}
+.tab{position:absolute;width:300px;height:210px;border-radius:18px;background:rgba(0,0,0,.18);transform:rotate(-5deg) translate(-40px,30px)}
+.dev{position:relative;width:208px;height:400px;border-radius:34px;background:#101211;padding:9px;box-shadow:0 30px 60px rgba(0,0,0,.35)}
+.scr{height:100%;border-radius:26px;background:#f1efea;color:#262a27;padding:20px 13px;font-size:11px;overflow:hidden}
+.scr .h{font:400 18px "Young Serif",serif;margin-bottom:12px}
+.scr .r{height:32px;border-radius:9px;background:rgba(86,102,79,.16);margin-bottom:7px;display:flex;align-items:center;justify-content:space-between;padding:0 10px}
+.scr .r em{font:normal 14px Amiri,serif}
+.scr .bl{height:64px;border-radius:12px;background:rgba(0,0,0,.08);margin-bottom:8px}
+.scr .ln{height:6px;border-radius:3px;background:rgba(0,0,0,.12);margin:8px 0}
+.scr .ln.s{width:55%}
+.scr .c{width:100px;height:100px;border-radius:50%;border:6px solid rgba(0,0,0,.1);margin:24px auto}
+.more{padding:96px 0 0}
+.more h3{font:400 clamp(30px,4.5vw,48px)/1.1 "Young Serif",serif;max-width:640px}
+.more p{color:var(--mut);margin-top:16px;max-width:520px}
+footer{margin-top:90px;border-top:1px solid var(--line);padding:28px 0 44px;color:var(--mut);font-size:14.5px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px}
+footer nav{display:flex;gap:24px}
+footer a:hover{color:var(--tx)}
+@media(max-width:860px){
+.band{padding:56px 0}.band .wrap{grid-template-columns:1fr;gap:36px}
+.hero{padding:56px 0 48px}.shot{height:380px;order:2}
+.btns{grid-template-columns:1fr 1fr 1fr}
+.tab{width:240px}
+.dev{width:190px;height:360px}
+}
+@media(max-width:480px){.btns{grid-template-columns:1fr}.btn{flex-direction:row;justify-content:space-between;align-items:center}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <a class="brand" href="/" aria-label="Arakat">arakat</a>
+  <div class="tools">
+    <div class="lang" role="group" aria-label="Language">
+      <button data-l="en" aria-pressed="false">EN</button><button data-l="es" aria-pressed="true">ES</button><button data-l="fr" aria-pressed="false">FR</button>
+    </div>
+    <button class="theme" id="theme" aria-label="Toggle theme"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+  </div>
+</div></header>
+
+<main>
+<section class="hero"><div class="wrap">
+  <h1 data-i="h1">Hechas a mano, una app a la vez.</h1>
+  <p data-i="sub">Arakat es un pequeño estudio que publica aplicaciones y juegos útiles. Sin anuncios, sin cuentas y siempre gratis.</p>
+  <div class="facts"><span data-i="f1">Sin anuncios</span><span data-i="f2">Sin registro</span><span data-i="f3">Web · Android · iOS</span></div>
+</div></section>
+
+<section class="band b1"><div class="wrap">
+  <div>
+    <div class="top"><div class="logo"><svg width="38" height="38" viewBox="0 0 40 40"><path d="M26 7a14 14 0 1 0 7 21 11 11 0 0 1-7-21z" fill="#f1efea"/></svg></div><small data-i="c1">Corán en audio</small><span class="status" data-i="live">Disponible</span></div>
+    <h2>sukun</h2>
+    <p data-i="d1">El Corán completo, sin distracciones. Cientos de recitaciones, reproducción en segundo plano y cuatro idiomas.</p>
+    <div class="btns"><a class="btn" href="https://sukun.arakat.app">Web<small>sukun.arakat.app</small></a><a class="btn" href="#">Android<small>Google Play</small></a><span class="btn off">iOS<small data-i="soon">Pronto</small></span></div>
+  </div>
+  <div class="shot" aria-hidden="true"><div class="tab"></div><div class="dev"><div class="scr"><div class="h">sukun</div><div class="r">Al-Fātiḥah<em>الفاتحة</em></div><div class="r">Al-Baqarah<em>البقرة</em></div><div class="r">Āl ʿImrān<em>آل عمران</em></div><div class="r">An-Nisāʾ<em>النساء</em></div><div class="bl" style="margin-top:14px"></div></div></div></div>
+</div></section>
+
+<section class="band b2"><div class="wrap">
+  <div>
+    <div class="top"><div class="logo"><svg width="36" height="36" viewBox="0 0 40 40" fill="none" stroke="#f1efea" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 32S8 24 8 15a6 6 0 0 1 12-2 6 6 0 0 1 12 2c0 9-12 17-12 17z"/></svg></div><small data-i="c2">Bienestar</small><span class="status" data-i="wip">En camino</span></div>
+    <h2>Example · Care</h2>
+    <p data-i="d2">Recordatorios amables para cuidar de los tuyos, sin presión ni rachas.</p>
+    <div class="btns"><span class="btn off">Web<small data-i="soon">Pronto</small></span><span class="btn off">Android<small data-i="soon">Pronto</small></span><span class="btn off">iOS<small data-i="soon">Pronto</small></span></div>
+  </div>
+  <div class="shot" aria-hidden="true"><div class="tab"></div><div class="dev"><div class="scr"><div class="h">Care</div><div class="bl"></div><div class="bl"></div><div class="bl"></div><div class="ln"></div><div class="ln s"></div></div></div></div>
+</div></section>
+
+<section class="band b3"><div class="wrap">
+  <div>
+    <div class="top"><div class="logo"><svg width="36" height="36" viewBox="0 0 40 40" fill="none" stroke="#f1efea" stroke-width="2.6" stroke-linejoin="round"><rect x="8" y="8" width="24" height="24" rx="7"/><circle cx="15" cy="15" r="1.8" fill="#f1efea"/><circle cx="25" cy="25" r="1.8" fill="#f1efea"/></svg></div><small data-i="c3">Juego</small><span class="status" data-i="wip">En camino</span></div>
+    <h2>Example · Dice</h2>
+    <p data-i="d3">Un juego de mesa rápido para jugar en familia, lejos de pantallas sobreestimulantes.</p>
+    <div class="btns"><span class="btn off">Web<small data-i="soon">Pronto</small></span><span class="btn off">Android<small data-i="soon">Pronto</small></span><span class="btn off">iOS<small data-i="soon">Pronto</small></span></div>
+  </div>
+  <div class="shot" aria-hidden="true"><div class="tab"></div><div class="dev"><div class="scr"><div class="h">Dice</div><div class="c"></div><div class="c" style="width:72px;height:72px;margin-top:0"></div><div class="ln"></div></div></div></div>
+</div></section>
+
+<section class="band b4"><div class="wrap">
+  <div>
+    <div class="top"><div class="logo"><svg width="36" height="36" viewBox="0 0 40 40" fill="none" stroke="#f1efea" stroke-width="2.6" stroke-linecap="round"><circle cx="20" cy="20" r="12"/><path d="M20 12v8l5 3"/></svg></div><small data-i="c4">Productividad</small><span class="status" data-i="wip">En camino</span></div>
+    <h2>Example · Focus</h2>
+    <p data-i="d4">Un temporizador de enfoque sin notificaciones ni gamificación.</p>
+    <div class="btns"><span class="btn off">Web<small data-i="soon">Pronto</small></span><span class="btn off">Android<small data-i="soon">Pronto</small></span><span class="btn off">iOS<small data-i="soon">Pronto</small></span></div>
+  </div>
+  <div class="shot" aria-hidden="true"><div class="tab"></div><div class="dev"><div class="scr"><div class="h">Focus</div><div class="c"></div><div class="ln"></div><div class="ln s"></div></div></div></div>
+</div></section>
+
+<section class="more"><div class="wrap">
+  <h3 data-i="mh">Cada app nueva tendrá su propio rincón.</h3>
+  <p data-i="mp">Viven en subdominios de arakat.app y se publican también en Android e iOS. Aquí las encontrarás todas.</p>
+</div></section>
+</main>
+
+<footer><div class="wrap"><span>© 2026 Arakat</span><nav><a href="/privacy-policy.html" data-i="priv">Privacidad</a><a href="mailto:arakat.contact@gmail.com" data-i="contact">Contacto</a></nav></div></footer>
+
+<script>
+const T={
+en:{h1:"Made by hand, one app at a time.",sub:"Arakat is a small studio publishing useful apps and games. No ads, no accounts, always free.",f1:"No ads",f2:"No sign-up",f3:"Web · Android · iOS",live:"Available",wip:"Coming soon",soon:"Soon",c1:"Qur'an audio",c2:"Wellbeing",c3:"Game",c4:"Productivity",d1:"The complete Qur'an, without distractions. Hundreds of recitations, background playback and four languages.",d2:"Gentle reminders to look after your people, with no pressure or streaks.",d3:"A quick board game to play with family, away from overstimulating screens.",d4:"A focus timer with no notifications or gamification.",mh:"Every new app will have its own corner.",mp:"They live on subdomains of arakat.app and also ship on Android and iOS. You'll find them all here.",priv:"Privacy",contact:"Contact"},
+es:{h1:"Hechas a mano, una app a la vez.",sub:"Arakat es un pequeño estudio que publica aplicaciones y juegos útiles. Sin anuncios, sin cuentas y siempre gratis.",f1:"Sin anuncios",f2:"Sin registro",f3:"Web · Android · iOS",live:"Disponible",wip:"En camino",soon:"Pronto",c1:"Corán en audio",c2:"Bienestar",c3:"Juego",c4:"Productividad",d1:"El Corán completo, sin distracciones. Cientos de recitaciones, reproducción en segundo plano y cuatro idiomas.",d2:"Recordatorios amables para cuidar de los tuyos, sin presión ni rachas.",d3:"Un juego de mesa rápido para jugar en familia, lejos de pantallas sobreestimulantes.",d4:"Un temporizador de enfoque sin notificaciones ni gamificación.",mh:"Cada app nueva tendrá su propio rincón.",mp:"Viven en subdominios de arakat.app y se publican también en Android e iOS. Aquí las encontrarás todas.",priv:"Privacidad",contact:"Contacto"},
+fr:{h1:"Faites à la main, une app à la fois.",sub:"Arakat est un petit studio qui publie des applications et des jeux utiles. Sans pub, sans compte, toujours gratuits.",f1:"Sans publicité",f2:"Sans inscription",f3:"Web · Android · iOS",live:"Disponible",wip:"À venir",soon:"Bientôt",c1:"Coran en audio",c2:"Bien-être",c3:"Jeu",c4:"Productivité",d1:"Le Coran complet, sans distractions. Des centaines de récitations, lecture en arrière-plan et quatre langues.",d2:"Des rappels bienveillants pour prendre soin des siens, sans pression ni séries.",d3:"Un jeu de société rapide à jouer en famille, loin des écrans sur-stimulants.",d4:"Un minuteur de concentration sans notifications ni gamification.",mh:"Chaque nouvelle app aura son propre coin.",mp:"Elles vivent sur des sous-domaines d'arakat.app et sortent aussi sur Android et iOS. Vous les trouverez toutes ici.",priv:"Confidentialité",contact:"Contact"}};
+function setLang(l){document.documentElement.lang=l;document.querySelectorAll('[data-i]').forEach(e=>e.textContent=T[l][e.dataset.i]);document.querySelectorAll('.lang button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.l===l))}
+document.querySelectorAll('.lang button').forEach(b=>b.onclick=()=>setLang(b.dataset.l));
+document.getElementById('theme').onclick=()=>{const r=document.documentElement;r.dataset.theme=r.dataset.theme==='dark'?'light':'dark'};
+</script>
+</body>
+</html>

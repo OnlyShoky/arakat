@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Arakat — A collection of digital things</title>
+  <meta name="description" content="Arakat is a collection of thoughtful apps, useful tools and playful experiences for web, Android and iOS.">
+  <meta name="author" content="Arakat">
+  <meta name="theme-color" content="#f4f0e8">
+
+  <meta property="og:title" content="Arakat — A collection of digital things">
+  <meta property="og:description" content="Thoughtful apps, useful tools and playful digital experiences by Arakat.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://arakat.app/">
+  <meta property="og:image" content="https://arakat.app/og-image.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --paper: #f4f0e8;
+      --paper-2: #ebe6dc;
+      --white: #fbfaf6;
+      --ink: #252c2f;
+      --muted: #677075;
+      --line: #cfd0c8;
+
+      --blue: #b7cbd4;
+      --blue-dark: #516d78;
+
+      --butter: #e8dba3;
+      --butter-dark: #817542;
+
+      --terracotta: #d9b3a3;
+      --terracotta-dark: #855f50;
+
+      --lavender: #c8c1d4;
+      --lavender-dark: #6c627d;
+
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Archivo", system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body::selection {
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .wrap {
+      width: min(calc(100% - 52px), var(--max));
+      margin-inline: auto;
+    }
+
+    /* TOP BAR */
+
+    header {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .topbar {
+      min-height: 67px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: -.04em;
+    }
+
+    .brand-box {
+      width: 25px;
+      height: 25px;
+      display: grid;
+      place-items: center;
+      border: 1.5px solid var(--ink);
+      border-radius: 6px;
+      font-size: 11px;
+    }
+
+    .top-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .top-links a:hover { color: var(--ink); }
+
+    .lang {
+      padding-left: 19px;
+      border-left: 1px solid var(--line);
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    /* INTRO */
+
+    .intro {
+      padding: 84px 0 70px;
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 80px;
+      align-items: end;
+    }
+
+    .edition {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      font-weight: 700;
+      color: var(--blue-dark);
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 840px;
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-size: clamp(48px, 7.1vw, 90px);
+      line-height: .99;
+      letter-spacing: -.06em;
+      font-weight: 400;
+    }
+
+    h1 span {
+      display: block;
+      color: var(--blue-dark);
+    }
+
+    .intro-copy {
+      margin: 0;
+      max-width: 330px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.85;
+    }
+
+    .intro-copy strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    /* CATALOG HEADER */
+
+    .catalog-head {
+      padding: 18px 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .catalog-title {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      font-weight: 700;
+    }
+
+    .catalog-meta {
+      color: var(--muted);
+      font-size: 10px;
+    }
+
+    /* FEATURE */
+
+    .feature {
+      display: grid;
+      grid-template-columns: 58% 42%;
+      min-height: 545px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .feature-copy {
+      padding: 55px 60px 55px 0;
+    }
+
+    .feature-number {
+      color: #a4a8a4;
+      font-size: 11px;
+      font-weight: 600;
+      margin-bottom: 39px;
+    }
+
+    .feature-kicker {
+      margin-bottom: 15px;
+      color: var(--terracotta-dark);
+      font-size: 10px;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .feature-title {
+      display: flex;
+      align-items: center;
+      gap: 17px;
+      margin-bottom: 15px;
+    }
+
+    .feature-icon {
+      width: 58px;
+      height: 58px;
+      flex: 0 0 58px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--terracotta);
+      color: var(--terracotta-dark);
+      font-family: Georgia, serif;
+      font-size: 26px;
+      border: 1px solid rgba(133,95,80,.16);
+    }
+
+    .feature-title h2 {
+      margin: 0;
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-size: 47px;
+      font-weight: 400;
+      letter-spacing: -.055em;
+    }
+
+    .feature-arabic {
+      color: var(--muted);
+      font-family: Georgia, serif;
+      font-size: 14px;
+      margin-left: 76px;
+      margin-top: -9px;
+    }
+
+    .feature-description {
+      max-width: 610px;
+      margin: 31px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.85;
+    }
+
+    .feature-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 22px;
+      margin: 27px 0 32px;
+      max-width: 540px;
+    }
+
+    .feature-list div {
+      padding: 8px 0;
+      border-bottom: 1px dotted #bec0b9;
+      font-size: 10px;
+      color: var(--ink);
+    }
+
+    .feature-list span {
+      color: var(--muted);
+    }
+
+    .feature-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .button {
+      min-height: 40px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 14px;
+      border: 1px solid var(--ink);
+      background: var(--ink);
+      color: #f8f5ed;
+      border-radius: 7px;
+      font-size: 10px;
+      font-weight: 600;
+    }
+
+    .button.light {
+      background: transparent;
+      color: var(--ink);
+      border-color: #aeb2ad;
+    }
+
+    .button:hover {
+      opacity: .84;
+    }
+
+    /* VISUAL */
+
+    .feature-visual {
+      position: relative;
+      border-left: 1px solid var(--line);
+      background: var(--blue);
+      overflow: hidden;
+    }
+
+    .visual-grid {
+      position: absolute;
+      inset: 0;
+      opacity: .29;
+      background-image:
+        linear-gradient(rgba(81,109,120,.34) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(81,109,120,.34) 1px, transparent 1px);
+      background-size: 34px 34px;
+    }
+
+    .stamp {
+      position: absolute;
+      top: 34px;
+      right: 34px;
+      width: 70px;
+      height: 70px;
+      border: 1px solid rgba(81,109,120,.55);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: var(--blue-dark);
+      font-size: 9px;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    .phone {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 238px;
+      height: 405px;
+      transform: translate(-50%, -46%) rotate(2.2deg);
+      padding: 9px;
+      border-radius: 31px;
+      background: #2b3639;
+      box-shadow: 0 30px 45px rgba(44,58,63,.24);
+    }
+
+    .phone-screen {
+      height: 100%;
+      overflow: hidden;
+      border-radius: 23px;
+      background: #f2eee5;
+      padding: 20px 17px;
+      border: 1px solid rgba(255,255,255,.45);
+    }
+
+    .notch {
+      height: 13px;
+      width: 65px;
+      background: #2b3639;
+      margin: -20px auto 22px;
+      border-radius: 0 0 9px 9px;
+    }
+
+    .screen-kicker {
+      text-align: center;
+      font-size: 7px;
+      letter-spacing: .13em;
+      color: #687075;
+      text-transform: uppercase;
+    }
+
+    .screen-heading {
+      margin: 23px 0 1px;
+      text-align: center;
+      font-family: Georgia, serif;
+      font-size: 26px;
+      font-weight: 400;
+    }
+
+    .screen-arabic {
+      text-align: center;
+      color: var(--terracotta-dark);
+      font-family: Georgia, serif;
+      font-size: 15px;
+      margin-bottom: 23px;
+    }
+
+    .surah {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      height: 39px;
+      padding: 0 9px;
+      margin-bottom: 7px;
+      background: rgba(255,253,249,.72);
+      border: 1px solid #ddd8ce;
+      border-radius: 7px;
+      font-size: 7px;
+      color: #697175;
+    }
+
+    .surah b {
+      color: #30373a;
+      font-size: 8px;
+    }
+
+    .surah i {
+      margin-left: auto;
+      font-style: normal;
+      color: var(--terracotta-dark);
+    }
+
+    .player {
+      margin-top: 19px;
+      background: #d8b8aa;
+      border-radius: 11px;
+      padding: 11px;
+    }
+
+    .player-title {
+      color: #63483e;
+      font-size: 7px;
+    }
+
+    .progress {
+      height: 2px;
+      background: rgba(99,72,62,.25);
+      margin: 9px 0 11px;
+    }
+
+    .progress span {
+      display: block;
+      width: 46%;
+      height: 100%;
+      background: var(--terracotta-dark);
+    }
+
+    .player-controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #76574c;
+      font-size: 8px;
+    }
+
+    .play {
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--terracotta-dark);
+      color: #fff7f3;
+    }
+
+    /* MINI COLLECTION */
+
+    .collection {
+      padding: 66px 0 98px;
+    }
+
+    .collection-intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: end;
+      margin-bottom: 22px;
+    }
+
+    .collection-intro h2 {
+      margin: 0;
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-size: 34px;
+      font-weight: 400;
+      letter-spacing: -.045em;
+    }
+
+    .collection-intro p {
+      margin: 0;
+      justify-self: end;
+      max-width: 370px;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.75;
+    }
+
+    .future-grid {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr .9fr;
+      gap: 10px;
+    }
+
+    .future {
+      min-height: 222px;
+      padding: 22px;
+      border: 1px solid rgba(37,44,47,.12);
+      border-radius: 13px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .future.blue { background: #dbe5e8; }
+    .future.yellow { background: #eee6be; }
+    .future.lav { background: #ddd8e4; }
+
+    .future-number {
+      color: rgba(37,44,47,.45);
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-size: 12px;
+    }
+
+    .future-shape {
+      position: absolute;
+      width: 92px;
+      height: 92px;
+      border-radius: 50%;
+      right: -16px;
+      top: -17px;
+      background: rgba(255,255,255,.22);
+    }
+
+    .future h3 {
+      position: absolute;
+      left: 22px;
+      bottom: 44px;
+      margin: 0;
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-size: 21px;
+      font-weight: 400;
+      letter-spacing: -.025em;
+    }
+
+    .future p {
+      position: absolute;
+      left: 22px;
+      right: 22px;
+      bottom: 17px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 9px;
+      line-height: 1.5;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 26px 0 36px;
+      border-top: 1px solid var(--line);
+    }
+
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .footer-brand {
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: -.035em;
+    }
+
+    .footer-text,
+    .footer-links {
+      color: var(--muted);
+      font-size: 9px;
+    }
+
+    .footer-right {
+      display: flex;
+      gap: 17px;
+    }
+
+    .footer-links:hover { color: var(--ink); }
+
+    @media (max-width: 860px) {
+      .intro {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .intro-copy {
+        max-width: 520px;
+      }
+
+      .feature {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-copy {
+        padding: 48px 0 52px;
+      }
+
+      .feature-visual {
+        min-height: 540px;
+        border-left: 0;
+        border-top: 1px solid var(--line);
+      }
+
+      .collection-intro {
+        grid-template-columns: 1fr;
+      }
+
+      .collection-intro p {
+        justify-self: start;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .wrap { width: min(calc(100% - 30px), var(--max)); }
+
+      .top-links {
+        gap: 9px;
+      }
+
+      .top-links a { display: none; }
+
+      .intro {
+        padding: 55px 0 52px;
+      }
+
+      h1 { font-size: 51px; }
+
+      .feature-title h2 { font-size: 39px; }
+
+      .feature-list {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-visual {
+        min-height: 480px;
+      }
+
+      .phone {
+        transform: translate(-50%, -47%) rotate(2.2deg) scale(.9);
+      }
+
+      .future-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .future {
+        min-height: 190px;
+      }
+
+      .footer {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="wrap topbar">
+      <a class="brand" href="#" aria-label="Arakat">
+        <span class="brand-box">A</span>
+        arakat
+      </a>
+
+      <nav class="top-links" aria-label="Navegación principal">
+        <a href="#collection">Collection</a>
+        <a href="#coming">Coming soon</a>
+        <a href="#contact">Contact</a>
+        <span class="lang">ES · EN · FR</span>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="wrap intro" aria-labelledby="title">
+      <div>
+        <div class="edition">Arakat / Digital collection / 2026</div>
+        <h1 id="title">
+          Apps for
+          <span>everyday life.</span>
+        </h1>
+      </div>
+
+      <p class="intro-copy">
+        <strong>Arakat makes small digital things.</strong>
+        Useful applications, quiet tools and occasional games —
+        each one created for a clear purpose and built to work across
+        web, Android and iOS.
+      </p>
+    </section>
+
+    <section id="collection">
+      <div class="wrap catalog-head">
+        <span class="catalog-title">Selected work</span>
+        <span class="catalog-meta">01 application / 03 platforms</span>
+      </div>
+
+      <article class="wrap feature" aria-labelledby="sukun-title">
+        <div class="feature-copy">
+          <div class="feature-number">NO. 01</div>
+          <div class="feature-kicker">Audio · Quran · Focus</div>
+
+          <div class="feature-title">
+            <div class="feature-icon">س</div>
+            <h2 id="sukun-title">sukun</h2>
+          </div>
+
+          <div class="feature-arabic">سكون — calm, serenity, tranquility</div>
+
+          <p class="feature-description">
+            A minimalist Quran audio streaming application with one central idea:
+            keep the listening experience peaceful and free from distractions.
+            Listen to reciters and the complete 114-surah catalog from a clean,
+            focused interface.
+          </p>
+
+          <div class="feature-list">
+            <div>Price <span>— 100% free</span></div>
+            <div>Account <span>— Not required</span></div>
+            <div>Advertising <span>— None</span></div>
+            <div>Privacy <span>— First principle</span></div>
+            <div>Web <span>— Available</span></div>
+            <div>Mobile <span>— Android / iOS</span></div>
+          </div>
+
+          <div class="feature-actions">
+            <a class="button" href="https://sukun.arakat.app">Open web app ↗</a>
+            <a class="button light" href="#">Android ↗</a>
+            <a class="button light" href="#">iOS ↗</a>
+          </div>
+        </div>
+
+        <div class="feature-visual" aria-label="Sukun interface mockup">
+          <div class="visual-grid"></div>
+
+          <div class="stamp">
+            Arakat<br>
+            no. 01<br>
+            2026
+          </div>
+
+          <div class="phone">
+            <div class="phone-screen">
+              <div class="notch"></div>
+              <div class="screen-kicker">Sukun</div>
+              <div class="screen-heading">Surahs</div>
+              <div class="screen-arabic">السور</div>
+
+              <div class="surah"><b>01</b><span>Al-Fatihah</span><i>▶</i></div>
+              <div class="surah"><b>02</b><span>Al-Baqarah</span><i>▶</i></div>
+              <div class="surah"><b>03</b><span>Ali 'Imran</span><i>▶</i></div>
+              <div class="surah"><b>04</b><span>An-Nisa</span><i>▶</i></div>
+
+              <div class="player">
+                <div class="player-title">Al-Fatihah · Reciter</div>
+                <div class="progress"><span></span></div>
+                <div class="player-controls">
+                  <span>−10</span>
+                  <span class="play">▶</span>
+                  <span>+10</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="collection" id="coming">
+      <div class="wrap">
+        <div class="collection-intro">
+          <h2>The rest of the collection</h2>
+          <p>
+            Sukun is only the beginning. Future projects may be useful,
+            playful, experimental or simply nice to have.
+          </p>
+        </div>
+
+        <div class="future-grid">
+          <article class="future blue">
+            <span class="future-number">02</span>
+            <span class="future-shape"></span>
+            <h3>A useful little tool</h3>
+            <p>Something that makes one everyday task easier.</p>
+          </article>
+
+          <article class="future yellow">
+            <span class="future-number">03</span>
+            <span class="future-shape"></span>
+            <h3>A quiet game</h3>
+            <p>A small game made for a few good minutes.</p>
+          </article>
+
+          <article class="future lav">
+            <span class="future-number">04</span>
+            <span class="future-shape"></span>
+            <h3>Still becoming</h3>
+            <p>An idea waiting for the right shape.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <div class="wrap footer">
+      <div class="footer-brand">arakat</div>
+      <div class="footer-text">Independent apps & digital experiences.</div>
+      <div class="footer-right">
+        <a class="footer-links" href="#">Privacy</a>
+        <a class="footer-links" href="#">Contact</a>
+        <a class="footer-links" href="#">© 2026</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Arakat — Quiet apps, softly made</title>
+<meta name="description" content="Arakat makes gentle, free apps and games with no ads and no accounts. On web, Android and iOS.">
+<link rel="canonical" href="https://arakat.app/">
+<link rel="alternate" hreflang="en" href="https://arakat.app/en/">
+<link rel="alternate" hreflang="es" href="https://arakat.app/es/">
+<link rel="alternate" hreflang="fr" href="https://arakat.app/fr/">
+<link rel="alternate" hreflang="x-default" href="https://arakat.app/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Arakat — Quiet apps, softly made">
+<meta property="og:description" content="Gentle, free apps with no ads and no accounts.">
+<meta property="og:url" content="https://arakat.app/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f3f2ee">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Arakat","url":"https://arakat.app","email":"arakat.contact@gmail.com"}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..500,100&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f3f2ee;--tx:#3b3a3f;--mut:#7b7a80;--card:rgba(255,255,255,.62);--bd:rgba(59,58,63,.12)}
+:root[data-theme="dark"]{--bg:#212226;--tx:#e6e3e8;--mut:#9b99a1;--card:rgba(255,255,255,.07);--bd:rgba(255,255,255,.13)}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--tx);font:400 16px/1.65 "Nunito Sans",system-ui,sans-serif;-webkit-font-smoothing:antialiased;transition:background .3s,color .3s}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--tx);outline-offset:3px;border-radius:10px}
+.layout{display:grid;grid-template-columns:minmax(280px,380px) 1fr;gap:56px;max-width:1240px;margin:0 auto;padding:0 32px}
+aside{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;justify-content:space-between;padding:40px 0}
+.brand{font:300 34px Fraunces,serif;font-variation-settings:"SOFT" 100;letter-spacing:-.01em}
+aside h1{font:300 clamp(34px,3.6vw,46px)/1.12 Fraunces,serif;font-variation-settings:"SOFT" 100;letter-spacing:-.02em;margin-bottom:20px}
+aside p{color:var(--mut);max-width:310px}
+.vals{margin-top:28px;display:grid;gap:8px;font-size:14.5px;list-style:none;padding:0}
+.vals li{display:flex;gap:10px;align-items:center}
+.vals li::before{content:"";width:14px;height:14px;border-radius:50%;background:#cfe0d3;flex:none}
+:root[data-theme="dark"] .vals li::before{background:#5d7a66}
+.tools{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.lang{display:flex;gap:4px}
+.lang button{all:unset;cursor:pointer;font-size:13px;font-weight:700;padding:6px 12px;border-radius:999px;color:var(--mut);border:1px solid transparent}
+.lang button[aria-pressed="true"]{border-color:var(--bd);background:var(--card);color:var(--tx)}
+.theme{all:unset;cursor:pointer;width:34px;height:34px;border-radius:50%;border:1px solid var(--bd);display:grid;place-items:center;color:var(--mut)}
+.theme:hover{color:var(--tx)}
+.top{display:flex;flex-direction:column;gap:56px}
+main{padding:40px 0 60px;display:grid;gap:20px}
+.tile{--l:#e3ebe2;--d:#2f3a33;background:var(--l);border-radius:36px;padding:44px;display:grid;grid-template-columns:1fr 200px;gap:24px;min-height:340px;overflow:hidden;position:relative;color:#3b3a3f}
+:root[data-theme="dark"] .tile{background:var(--d);color:#e6e3e8}
+.tile.t2{--l:#f1ddd8;--d:#3c302f}
+.tile.t3{--l:#f2ead0;--d:#3a3729}
+.tile.t4{--l:#e0dcec;--d:#33313f}
+.logo{width:68px;height:68px;border-radius:22px;background:rgba(255,255,255,.7);display:grid;place-items:center;box-shadow:0 1px 0 rgba(0,0,0,.04)}
+:root[data-theme="dark"] .logo{background:rgba(255,255,255,.1)}
+.tile h2{font:400 36px/1.1 Fraunces,serif;font-variation-settings:"SOFT" 100;margin:26px 0 4px;letter-spacing:-.01em}
+.sub{font-size:14px;font-weight:600;opacity:.65}
+.tile p.d{margin:16px 0 26px;max-width:380px;opacity:.82}
+.plats{display:flex;flex-wrap:wrap;gap:8px}
+.pl{padding:9px 18px;border-radius:999px;font-size:14px;font-weight:700;background:rgba(255,255,255,.7);transition:background .2s}
+:root[data-theme="dark"] .pl{background:rgba(255,255,255,.12)}
+a.pl:hover{background:#fff}
+:root[data-theme="dark"] a.pl:hover{background:rgba(255,255,255,.22)}
+.pl.off{background:transparent;border:1px dashed currentColor;opacity:.5}
+.badge{position:absolute;top:30px;right:34px;font-size:12px;font-weight:700;padding:4px 12px;border-radius:999px;background:rgba(255,255,255,.7)}
+:root[data-theme="dark"] .badge{background:rgba(255,255,255,.12)}
+.mock{align-self:end;justify-self:center;width:190px;height:270px;margin-bottom:-90px;border-radius:30px 30px 0 0;background:#fbfaf8;border:5px solid rgba(255,255,255,.9);border-bottom:0;padding:14px 12px;font-size:11px;color:#3b3a3f}
+:root[data-theme="dark"] .mock{background:#26272b;border-color:#3a3b40;color:#e6e3e8}
+.mock .h{font:400 16px Fraunces,serif;margin:4px 2px 10px}
+.mock .r{height:30px;border-radius:10px;background:rgba(127,150,130,.2);margin-bottom:6px;display:flex;align-items:center;padding:0 10px;justify-content:space-between}
+.mock .r em{font-style:normal;font-family:Amiri,serif;font-size:13px}
+.mock .bar{height:6px;border-radius:3px;background:rgba(127,127,127,.2);margin:8px 0}
+.mock .bar.s{width:60%}
+.mock .dot{width:44px;height:44px;border-radius:50%;background:rgba(127,127,127,.25);margin:14px auto 0}
+.mock .sq{height:58px;border-radius:12px;background:rgba(127,127,127,.18);margin-bottom:6px}
+.t2 .mock .r,.t2 .mock .sq{background:rgba(200,130,120,.22)}
+.t3 .mock .sq{background:rgba(200,175,90,.25)}
+.t4 .mock .sq{background:rgba(150,135,200,.22)}
+.note{border:1px dashed var(--bd);border-radius:28px;padding:28px 34px;color:var(--mut);font-size:15px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+.note a{font-weight:700;color:var(--tx);border-bottom:1px solid var(--bd)}
+footer{display:flex;gap:22px;flex-wrap:wrap;color:var(--mut);font-size:14px;padding-top:6px}
+footer a:hover{color:var(--tx)}
+@media(max-width:900px){
+.layout{grid-template-columns:1fr;gap:0;padding:0 20px}
+aside{position:static;height:auto;gap:34px;padding:28px 0 24px}
+.top{gap:34px}
+.tile{grid-template-columns:1fr;padding:32px 26px 0;min-height:0}
+.mock{margin-bottom:0;width:170px;height:200px;margin-top:10px}
+.badge{top:22px;right:22px}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="layout">
+<aside>
+  <div class="top">
+    <a class="brand" href="/" aria-label="Arakat">arakat</a>
+    <div>
+      <h1 data-i="h1">Apps tranquilas, hechas con cariño.</h1>
+      <p data-i="sub">Pequeñas aplicaciones y juegos para el día a día. Cada una vive en su propio rincón: arakat.app.</p>
+      <ul class="vals"><li data-i="p1">Siempre gratis</li><li data-i="p2">Sin anuncios</li><li data-i="p3">Sin cuentas ni rastreo</li></ul>
+    </div>
+  </div>
+  <div class="tools">
+    <div class="lang" role="group" aria-label="Language">
+      <button data-l="en" aria-pressed="false">EN</button>
+      <button data-l="es" aria-pressed="true">ES</button>
+      <button data-l="fr" aria-pressed="false">FR</button>
+    </div>
+    <button class="theme" id="theme" aria-label="Toggle theme">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+    </button>
+  </div>
+</aside>
+
+<main>
+  <article class="tile">
+    <span class="badge" data-i="live">Disponible</span>
+    <div>
+      <div class="logo"><svg width="34" height="34" viewBox="0 0 40 40"><path d="M26 7a14 14 0 1 0 7 21 11 11 0 0 1-7-21z" fill="#6f9a7e"/></svg></div>
+      <h2>sukun</h2>
+      <div class="sub" data-i="a1t">Corán en audio</div>
+      <p class="d" data-i="a1">El Corán completo, sin distracciones. Cientos de recitaciones, reproducción en segundo plano y cuatro idiomas.</p>
+      <div class="plats"><a class="pl" href="https://sukun.arakat.app">Web</a><a class="pl" href="#">Android</a><span class="pl off">iOS · <span data-i="soon">pronto</span></span></div>
+    </div>
+    <div class="mock" aria-hidden="true"><div class="h">sukun</div><div class="r">Al-Fātiḥah<em>الفاتحة</em></div><div class="r">Al-Baqarah<em>البقرة</em></div><div class="r">Āl ʿImrān<em>آل عمران</em></div></div>
+  </article>
+
+  <article class="tile t2">
+    <span class="badge" data-i="wip">En camino</span>
+    <div>
+      <div class="logo"><svg width="32" height="32" viewBox="0 0 40 40" fill="none" stroke="#c9847a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 32S8 24 8 15a6 6 0 0 1 12-2 6 6 0 0 1 12 2c0 9-12 17-12 17z"/></svg></div>
+      <h2>Example · Care</h2>
+      <div class="sub" data-i="a2t">Bienestar</div>
+      <p class="d" data-i="a2">Recordatorios amables para cuidar de los tuyos, sin presión ni rachas.</p>
+      <div class="plats"><span class="pl off">Web</span><span class="pl off">Android</span><span class="pl off">iOS</span></div>
+    </div>
+    <div class="mock" aria-hidden="true"><div class="h">Care</div><div class="sq"></div><div class="sq"></div><div class="bar"></div><div class="bar s"></div></div>
+  </article>
+
+  <article class="tile t3">
+    <span class="badge" data-i="wip">En camino</span>
+    <div>
+      <div class="logo"><svg width="32" height="32" viewBox="0 0 40 40" fill="none" stroke="#b89d3e" stroke-width="3" stroke-linejoin="round"><rect x="8" y="8" width="24" height="24" rx="7"/><circle cx="15" cy="15" r="1.8" fill="#b89d3e"/><circle cx="25" cy="25" r="1.8" fill="#b89d3e"/></svg></div>
+      <h2>Example · Dice</h2>
+      <div class="sub" data-i="a3t">Juego</div>
+      <p class="d" data-i="a3">Un juego de mesa rápido para jugar en familia, sin pantallas llenas de estímulos.</p>
+      <div class="plats"><span class="pl off">Web</span><span class="pl off">Android</span><span class="pl off">iOS</span></div>
+    </div>
+    <div class="mock" aria-hidden="true"><div class="h">Dice</div><div class="dot"></div><div class="dot"></div><div class="bar" style="margin-top:16px"></div></div>
+  </article>
+
+  <article class="tile t4">
+    <span class="badge" data-i="wip">En camino</span>
+    <div>
+      <div class="logo"><svg width="32" height="32" viewBox="0 0 40 40" fill="none" stroke="#8f82c4" stroke-width="3" stroke-linecap="round"><circle cx="20" cy="20" r="12"/><path d="M20 12v8l5 3"/></svg></div>
+      <h2>Example · Focus</h2>
+      <div class="sub" data-i="a4t">Productividad</div>
+      <p class="d" data-i="a4">Un temporizador de enfoque sin notificaciones ni gamificación.</p>
+      <div class="plats"><span class="pl off">Web</span><span class="pl off">Android</span><span class="pl off">iOS</span></div>
+    </div>
+    <div class="mock" aria-hidden="true"><div class="h">Focus</div><div class="dot" style="width:90px;height:90px"></div><div class="bar" style="margin-top:16px"></div><div class="bar s"></div></div>
+  </article>
+
+  <div class="note"><span data-i="more">Pronto habrá más. Cada app nueva aparecerá aquí.</span><a href="mailto:arakat.contact@gmail.com" data-i="contact">Escríbenos</a></div>
+  <footer><span>© 2026 Arakat</span><a href="/privacy-policy.html" data-i="priv">Privacidad</a><a href="mailto:arakat.contact@gmail.com" data-i="contact2">Contacto</a></footer>
+</main>
+</div>
+
+<script>
+const T={
+en:{h1:"Quiet apps, made with care.",sub:"Small apps and games for everyday life. Each one lives in its own corner: arakat.app.",p1:"Always free",p2:"No ads",p3:"No accounts or tracking",live:"Available",wip:"Coming soon",soon:"soon",a1t:"Qur'an audio",a1:"The complete Qur'an, without distractions. Hundreds of recitations, background playback and four languages.",a2t:"Wellbeing",a2:"Gentle reminders to look after your people, with no pressure or streaks.",a3t:"Game",a3:"A quick board game to play with family, without screens full of stimulation.",a4t:"Productivity",a4:"A focus timer with no notifications or gamification.",more:"More is coming. Every new app will appear here.",contact:"Write to us",priv:"Privacy",contact2:"Contact"},
+es:{h1:"Apps tranquilas, hechas con cariño.",sub:"Pequeñas aplicaciones y juegos para el día a día. Cada una vive en su propio rincón: arakat.app.",p1:"Siempre gratis",p2:"Sin anuncios",p3:"Sin cuentas ni rastreo",live:"Disponible",wip:"En camino",soon:"pronto",a1t:"Corán en audio",a1:"El Corán completo, sin distracciones. Cientos de recitaciones, reproducción en segundo plano y cuatro idiomas.",a2t:"Bienestar",a2:"Recordatorios amables para cuidar de los tuyos, sin presión ni rachas.",a3t:"Juego",a3:"Un juego de mesa rápido para jugar en familia, sin pantallas llenas de estímulos.",a4t:"Productividad",a4:"Un temporizador de enfoque sin notificaciones ni gamificación.",more:"Pronto habrá más. Cada app nueva aparecerá aquí.",contact:"Escríbenos",priv:"Privacidad",contact2:"Contacto"},
+fr:{h1:"Des apps paisibles, faites avec soin.",sub:"De petites applications et jeux pour le quotidien. Chacune vit dans son propre coin : arakat.app.",p1:"Toujours gratuit",p2:"Sans publicité",p3:"Sans compte ni suivi",live:"Disponible",wip:"À venir",soon:"bientôt",a1t:"Coran en audio",a1:"Le Coran complet, sans distractions. Des centaines de récitations, lecture en arrière-plan et quatre langues.",a2t:"Bien-être",a2:"Des rappels bienveillants pour prendre soin des siens, sans pression ni séries.",a3t:"Jeu",a3:"Un jeu de société rapide à jouer en famille, sans écrans saturés de stimulations.",a4t:"Productivité",a4:"Un minuteur de concentration sans notifications ni gamification.",more:"D'autres arrivent. Chaque nouvelle app apparaîtra ici.",contact:"Écrivez-nous",priv:"Confidentialité",contact2:"Contact"}};
+function setLang(l){document.documentElement.lang=l;document.querySelectorAll('[data-i]').forEach(e=>e.textContent=T[l][e.dataset.i]);document.querySelectorAll('.lang button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.l===l))}
+document.querySelectorAll('.lang button').forEach(b=>b.onclick=()=>setLang(b.dataset.l));
+document.getElementById('theme').onclick=()=>{const r=document.documentElement;r.dataset.theme=r.dataset.theme==='dark'?'light':'dark'};
+</script>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Arakat — Apps with nothing to prove</title>
+<meta name="description" content="Arakat makes free apps and games with no ads and no accounts, for web, Android and iOS.">
+<link rel="canonical" href="https://arakat.app/">
+<link rel="alternate" hreflang="en" href="https://arakat.app/en/">
+<link rel="alternate" hreflang="es" href="https://arakat.app/es/">
+<link rel="alternate" hreflang="fr" href="https://arakat.app/fr/">
+<link rel="alternate" hreflang="x-default" href="https://arakat.app/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Arakat — Apps with nothing to prove">
+<meta property="og:description" content="Free apps, no ads, no accounts. Web, Android and iOS.">
+<meta property="og:url" content="https://arakat.app/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#dde2e6">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Arakat","url":"https://arakat.app","email":"arakat.contact@gmail.com"}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#dde2e6;--bg2:#e9edf0;--ink:#1d2935;--mut:#5d6b78;--brass:#a8844a;--line:rgba(29,41,53,.16);--arch:#c9d1d8;--dev:#1d2935;--scr:#f4f6f7}
+:root[data-theme="dark"]{--bg:#141a21;--bg2:#1b232b;--ink:#e4e7ea;--mut:#8b97a3;--brass:#c9a468;--line:rgba(228,231,234,.15);--arch:#222c36;--dev:#0b0f13;--scr:#1b232b}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--ink);font:400 16px/1.65 Karla,system-ui,sans-serif;-webkit-font-smoothing:antialiased;transition:background .3s,color .3s;min-height:100vh}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--brass);outline-offset:4px;border-radius:8px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 28px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:26px 0;border-bottom:1px solid var(--line)}
+nav .l{font:600 15px Karla;letter-spacing:.02em}
+.tools{display:flex;gap:14px;align-items:center}
+.lang button{all:unset;cursor:pointer;font-size:14px;font-weight:700;color:var(--mut);padding:4px 7px}
+.lang button[aria-pressed="true"]{color:var(--ink);border-bottom:2px solid var(--brass)}
+.theme{all:unset;cursor:pointer;color:var(--mut);display:grid;place-items:center;width:32px;height:32px}
+.theme:hover{color:var(--ink)}
+.hero{text-align:center;padding:84px 0 56px}
+.word{font:500 clamp(84px,17vw,190px)/.9 "Cormorant Garamond",serif;letter-spacing:-.03em}
+.hero p{margin:30px auto 0;max-width:480px;color:var(--mut);font-size:18px}
+.dock{display:flex;justify-content:center;gap:22px;flex-wrap:wrap;padding:12px 0 40px}
+.dock button{all:unset;cursor:pointer;display:grid;justify-items:center;gap:10px;font-size:13px;font-weight:700;color:var(--mut);position:relative;border-radius:22px}
+.dock button:focus-visible{outline:2px solid var(--brass);outline-offset:6px}
+.ic{width:78px;height:78px;border-radius:24px;display:grid;place-items:center;background:var(--bg2);border:1px solid var(--line);transition:transform .25s,border-color .25s,box-shadow .25s}
+.dock button:hover .ic{transform:translateY(-3px)}
+.dock button[aria-selected="true"]{color:var(--ink)}
+.dock button[aria-selected="true"] .ic{border-color:var(--brass);box-shadow:0 0 0 4px rgba(168,132,74,.18)}
+.dock button.soon .ic{opacity:.55}
+.stage{background:var(--bg2);border:1px solid var(--line);border-radius:6px 6px 40px 40px;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:30px;padding:64px 60px;min-height:520px}
+.stage h2{font:500 clamp(46px,6vw,68px)/1 "Cormorant Garamond",serif;letter-spacing:-.02em}
+.cat{color:var(--brass);font-weight:700;font-size:15px;margin-bottom:12px}
+.stage p{color:var(--mut);margin:20px 0 32px;max-width:400px;font-size:17px}
+.stat{display:inline-block;font-size:13px;font-weight:700;margin-bottom:22px;padding:3px 12px;border:1px solid var(--line);border-radius:999px;color:var(--mut)}
+.stat.on{border-color:var(--brass);color:var(--brass)}
+.plats{display:grid;gap:0;max-width:360px;border-top:1px solid var(--line)}
+.p{display:flex;justify-content:space-between;align-items:center;padding:14px 2px;border-bottom:1px solid var(--line);font-weight:700;font-size:15px}
+a.p:hover{color:var(--brass)}
+.p span{font-weight:500;color:var(--mut);font-size:14px}
+.p.off{color:var(--mut);opacity:.7;cursor:default}
+.art{display:grid;place-items:end center;height:400px;position:relative}
+.arch{position:absolute;bottom:0;width:300px;height:380px;border-radius:150px 150px 0 0;background:var(--arch)}
+.dev{position:relative;width:206px;height:360px;border-radius:32px 32px 0 0;background:var(--dev);padding:8px 8px 0;margin-bottom:0}
+.scr{height:100%;border-radius:25px 25px 0 0;background:var(--scr);padding:18px 13px;font-size:11px;overflow:hidden;color:#1d2935}
+:root[data-theme="dark"] .scr{color:#e4e7ea}
+.scr .h{font:600 19px "Cormorant Garamond",serif;margin-bottom:12px}
+.scr .r{height:32px;border-radius:9px;margin-bottom:7px;display:flex;align-items:center;justify-content:space-between;padding:0 10px;background:rgba(80,120,100,.14)}
+.scr .r em{font:normal 14px Amiri,serif}
+.scr .bl{height:60px;border-radius:12px;background:rgba(168,132,74,.2);margin-bottom:8px}
+.scr .ln{height:6px;border-radius:3px;background:rgba(127,127,127,.22);margin:8px 0}
+.scr .ln.s{width:55%}
+.scr .c{width:96px;height:96px;border-radius:50%;border:5px solid rgba(168,132,74,.35);margin:22px auto}
+.fade{animation:in .4s ease both}
+@keyframes in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:80px 0 0;border-top:1px solid var(--line)}
+.three div{padding:32px 28px 0 0}
+.three div+div{padding-left:28px;border-left:1px solid var(--line)}
+.three h3{font:500 28px "Cormorant Garamond",serif}
+.three p{color:var(--mut);font-size:15px;margin-top:6px}
+footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;margin-top:80px;padding:26px 0 40px;border-top:1px solid var(--line);color:var(--mut);font-size:14px}
+footer nav{all:unset;display:flex;gap:22px}
+footer a:hover{color:var(--ink)}
+@media(max-width:820px){
+.stage{grid-template-columns:1fr;padding:40px 26px 0;min-height:0}
+.art{height:340px;order:2}.arch{width:260px;height:320px}.dev{width:180px;height:310px}
+.hero{padding:56px 0 40px}
+.three{grid-template-columns:1fr}.three div,.three div+div{padding:22px 0;border-left:0;border-bottom:1px solid var(--line)}
+.ic{width:64px;height:64px;border-radius:20px}.dock{gap:14px}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav>
+  <span class="l">arakat.app</span>
+  <div class="tools">
+    <div class="lang" role="group" aria-label="Language">
+      <button data-l="en" aria-pressed="false">EN</button><button data-l="es" aria-pressed="true">ES</button><button data-l="fr" aria-pressed="false">FR</button>
+    </div>
+    <button class="theme" id="theme" aria-label="Toggle theme"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+  </div>
+</nav>
+
+<header class="hero">
+  <h1 class="word">arakat</h1>
+  <p data-i="sub">Aplicaciones y juegos que no tienen nada que demostrar. Útiles, gratuitas y sin ruido.</p>
+</header>
+
+<div class="dock" role="tablist" aria-label="Apps" id="dock"></div>
+
+<section class="stage" id="stage" role="tabpanel" aria-live="polite"></section>
+
+<section class="three">
+  <div><h3>Web</h3><p data-i="w">Abre cualquier app desde su subdominio, sin instalar nada.</p></div>
+  <div><h3>Android</h3><p data-i="an">Descárgala en Google Play y escucha o juega sin conexión constante.</p></div>
+  <div><h3>iOS</h3><p data-i="io">En camino para iPhone y iPad.</p></div>
+</section>
+
+<footer>
+  <span>© 2026 Arakat</span>
+  <nav><a href="/privacy-policy.html" data-i="priv">Privacidad</a><a href="mailto:arakat.contact@gmail.com" data-i="contact">Contacto</a></nav>
+</footer>
+</div>
+
+<script>
+const T={
+en:{sub:"Apps and games with nothing to prove. Useful, free and free of noise.",w:"Open any app from its subdomain, nothing to install.",an:"Get it on Google Play and listen or play without a constant connection.",io:"Coming soon for iPhone and iPad.",priv:"Privacy",contact:"Contact",live:"Available",wip:"Coming soon",soon:"soon",c1:"Qur'an audio",c2:"Wellbeing",c3:"Game",c4:"Productivity",d1:"The complete Qur'an without distractions. Hundreds of recitations, background playback, four languages. No ads, no accounts.",d2:"Gentle reminders to look after your people, with no pressure or streaks.",d3:"A quick board game to play with family, away from overstimulating screens.",d4:"A focus timer with no notifications or gamification."},
+es:{sub:"Aplicaciones y juegos que no tienen nada que demostrar. Útiles, gratuitas y sin ruido.",w:"Abre cualquier app desde su subdominio, sin instalar nada.",an:"Descárgala en Google Play y escucha o juega sin conexión constante.",io:"En camino para iPhone y iPad.",priv:"Privacidad",contact:"Contacto",live:"Disponible",wip:"En camino",soon:"pronto",c1:"Corán en audio",c2:"Bienestar",c3:"Juego",c4:"Productividad",d1:"El Corán completo sin distracciones. Cientos de recitaciones, reproducción en segundo plano y cuatro idiomas. Sin anuncios ni cuentas.",d2:"Recordatorios amables para cuidar de los tuyos, sin presión ni rachas.",d3:"Un juego de mesa rápido para jugar en familia, lejos de pantallas sobreestimulantes.",d4:"Un temporizador de enfoque sin notificaciones ni gamificación."},
+fr:{sub:"Des applications et des jeux qui n'ont rien à prouver. Utiles, gratuits et sans bruit.",w:"Ouvrez chaque app depuis son sous-domaine, sans rien installer.",an:"Téléchargez-la sur Google Play et écoutez ou jouez sans connexion permanente.",io:"Bientôt pour iPhone et iPad.",priv:"Confidentialité",contact:"Contact",live:"Disponible",wip:"À venir",soon:"bientôt",c1:"Coran en audio",c2:"Bien-être",c3:"Jeu",c4:"Productivité",d1:"Le Coran complet sans distractions. Des centaines de récitations, lecture en arrière-plan, quatre langues. Sans pub ni compte.",d2:"Des rappels bienveillants pour prendre soin des siens, sans pression ni séries.",d3:"Un jeu de société rapide à jouer en famille, loin des écrans sur-stimulants.",d4:"Un minuteur de concentration sans notifications ni gamification."}};
+const G=(s,c)=>`<svg width="38" height="38" viewBox="0 0 40 40" fill="none" stroke="${c}" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">${s}</svg>`;
+const APPS=[
+{n:"sukun",live:1,url:"https://sukun.arakat.app",c:"#5e8c78",g:'<path d="M26 7a14 14 0 1 0 7 21 11 11 0 0 1-7-21z" fill="#5e8c78" stroke="none"/>',s:'<div class="h">sukun</div><div class="r">Al-Fātiḥah<em>الفاتحة</em></div><div class="r">Al-Baqarah<em>البقرة</em></div><div class="r">Āl ʿImrān<em>آل عمران</em></div><div class="r">An-Nisāʾ<em>النساء</em></div><div class="bl" style="margin-top:14px"></div>'},
+{n:"Example · Care",c:"#b0707a",g:'<path d="M20 32S8 24 8 15a6 6 0 0 1 12-2 6 6 0 0 1 12 2c0 9-12 17-12 17z"/>',s:'<div class="h">Care</div><div class="bl"></div><div class="bl"></div><div class="ln"></div><div class="ln s"></div>'},
+{n:"Example · Dice",c:"#a8844a",g:'<rect x="8" y="8" width="24" height="24" rx="7"/><circle cx="15" cy="15" r="1.8" fill="#a8844a"/><circle cx="25" cy="25" r="1.8" fill="#a8844a"/>',s:'<div class="h">Dice</div><div class="c" style="margin:10px auto"></div><div class="c" style="margin:10px auto;width:70px;height:70px"></div>'},
+{n:"Example · Focus",c:"#6f7fa6",g:'<circle cx="20" cy="20" r="12"/><path d="M20 12v8l5 3"/>',s:'<div class="h">Focus</div><div class="c"></div><div class="ln"></div><div class="ln s"></div>'}];
+let lang="es",cur=0;
+const dock=document.getElementById('dock'),stage=document.getElementById('stage');
+function render(){
+ dock.innerHTML=APPS.map((a,i)=>`<button role="tab" class="${a.live?'':'soon'}" aria-selected="${i===cur}" data-k="${i}"><span class="ic">${G(a.g,a.c)}</span>${a.n.replace('Example · ','')}</button>`).join('');
+ const a=APPS[cur],t=T[lang],k=cur+1;
+ const p=a.live?`<a class="p" href="${a.url}">Web<span>sukun.arakat.app</span></a><a class="p" href="#">Android<span>Google Play</span></a><div class="p off">iOS<span>${t.soon}</span></div>`:`<div class="p off">Web<span>${t.soon}</span></div><div class="p off">Android<span>${t.soon}</span></div><div class="p off">iOS<span>${t.soon}</span></div>`;
+ stage.innerHTML=`<div class="fade"><div class="cat">${t['c'+k]}</div><h2>${a.n.replace('Example · ','')}</h2><p>${t['d'+k]}</p><span class="stat ${a.live?'on':''}">${a.live?t.live:t.wip}</span><div class="plats">${p}</div></div><div class="art fade"><div class="arch"></div><div class="dev"><div class="scr">${a.s||''}</div></div></div>`;
+ dock.querySelectorAll('button').forEach(b=>b.onclick=()=>{cur=+b.dataset.k;render();b.focus&&dock.querySelector('[aria-selected=true]').focus()});
+}
+function setLang(l){lang=l;document.documentElement.lang=l;document.querySelectorAll('[data-i]').forEach(e=>e.textContent=T[l][e.dataset.i]);document.querySelectorAll('.lang button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.l===l));render()}
+document.querySelectorAll('.lang button').forEach(b=>b.onclick=()=>setLang(b.dataset.l));
+document.getElementById('theme').onclick=()=>{const r=document.documentElement;r.dataset.theme=r.dataset.theme==='dark'?'light':'dark'};
+render();
+</script>
+</body>
+</html>

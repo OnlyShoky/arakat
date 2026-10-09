@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Arakat — A small library of useful apps</title>
+<meta name="description" content="Arakat is a small library of free apps and games with no ads and no accounts. Open them on web, Android or iOS.">
+<link rel="canonical" href="https://arakat.app/">
+<link rel="alternate" hreflang="en" href="https://arakat.app/en/">
+<link rel="alternate" hreflang="es" href="https://arakat.app/es/">
+<link rel="alternate" hreflang="fr" href="https://arakat.app/fr/">
+<link rel="alternate" hreflang="x-default" href="https://arakat.app/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Arakat — A small library of useful apps">
+<meta property="og:description" content="Free apps and games. No ads, no accounts.">
+<meta property="og:url" content="https://arakat.app/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#eadfb9">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Arakat","url":"https://arakat.app","email":"arakat.contact@gmail.com"}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@400;500;700&family=Alegreya+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eadfb9;--card:#f6efd3;--ink:#2d2415;--mut:#6d5f43;--line:#2d2415;--soft:rgba(45,36,21,.14);--olive:#6b6a2f;--scr:#fbf7e6}
+:root[data-theme="dark"]{--bg:#1b1810;--card:#26221a;--ink:#ecdfb2;--mut:#a39775;--line:#ecdfb2;--soft:rgba(236,223,178,.16);--olive:#b3b160;--scr:#2f2a1f}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--ink);font:400 18px/1.55 "Alegreya Sans",system-ui,sans-serif;-webkit-font-smoothing:antialiased;transition:background .3s,color .3s;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:8px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+header{display:flex;justify-content:space-between;align-items:center;padding:26px 0}
+.brand{font:700 28px Alegreya,serif;letter-spacing:-.01em}
+.tools{display:flex;gap:12px;align-items:center}
+.lang{display:flex;gap:2px}
+.lang button{all:unset;cursor:pointer;font-weight:700;font-size:15px;padding:5px 10px;border-radius:999px;color:var(--mut)}
+.lang button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.theme{all:unset;cursor:pointer;width:36px;height:36px;border-radius:50%;border:1.5px solid var(--line);display:grid;place-items:center}
+.hero{display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:end;padding:72px 0 56px}
+h1{font:500 clamp(44px,7vw,92px)/.98 Alegreya,serif;letter-spacing:-.025em}
+.hero p{color:var(--mut);font-size:20px;max-width:380px;justify-self:end}
+.bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px}
+.bar h2{font:500 22px Alegreya,serif;color:var(--mut)}
+.arrows{display:flex;gap:10px}
+.arrows button{all:unset;cursor:pointer;width:46px;height:46px;border-radius:50%;border:1.5px solid var(--line);display:grid;place-items:center;transition:background .2s,color .2s}
+.arrows button:hover{background:var(--ink);color:var(--bg)}
+.arrows button:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.rail{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 28px 28px;margin:0 -28px;scrollbar-width:none}
+.rail::-webkit-scrollbar{display:none}
+.card{flex:0 0 340px;scroll-snap-align:start;background:var(--card);border:1.5px solid var(--line);border-radius:28px;display:flex;flex-direction:column;overflow:hidden;min-height:700px}
+.head{display:flex;justify-content:space-between;align-items:flex-start;padding:24px 24px 0}
+.logo{width:64px;height:64px;border-radius:18px;border:1.5px solid var(--line);display:grid;place-items:center;background:var(--bg)}
+.st{font-size:14px;font-weight:700;padding:3px 12px;border-radius:999px;border:1.5px solid var(--line)}
+.st.on{background:var(--olive);border-color:var(--olive);color:#fbf7e6}
+.name{padding:18px 24px 0}
+.name h3{font:500 40px/1 Alegreya,serif;letter-spacing:-.015em}
+.name span{color:var(--mut);font-weight:500;font-size:16px}
+.vis{height:230px;margin:18px 24px 0;border-radius:20px;background:var(--bg);display:flex;justify-content:center;align-items:flex-end;overflow:hidden;border:1px solid var(--soft)}
+.dev{width:150px;height:200px;border-radius:24px 24px 0 0;background:var(--ink);padding:6px 6px 0}
+.scr{height:100%;border-radius:19px 19px 0 0;background:var(--scr);padding:12px 9px;font-size:9px;color:var(--ink);overflow:hidden}
+.scr .h{font:700 14px Alegreya,serif;margin-bottom:8px}
+.scr .r{height:22px;border-radius:7px;background:rgba(107,106,47,.2);margin-bottom:5px;display:flex;align-items:center;justify-content:space-between;padding:0 8px}
+.scr .r em{font:normal 11px Amiri,serif}
+.scr .bl{height:40px;border-radius:9px;background:var(--soft);margin-bottom:6px}
+.scr .c{width:64px;height:64px;border-radius:50%;border:5px solid var(--soft);margin:12px auto}
+.desc{padding:20px 24px;color:var(--mut);flex:1}
+.plats{display:grid;gap:8px;padding:0 24px 24px}
+.pl{display:flex;justify-content:space-between;align-items:center;padding:11px 16px;border-radius:14px;border:1.5px solid var(--line);font-weight:700;font-size:16px;transition:background .2s,color .2s}
+.pl span{font-weight:500;font-size:14px;opacity:.75}
+a.pl:hover{background:var(--ink);color:var(--bg)}
+.pl.off{border-style:dashed;border-color:var(--soft);color:var(--mut);cursor:default}
+.next{flex:0 0 340px;scroll-snap-align:start;border:1.5px dashed var(--line);border-radius:28px;display:grid;place-content:center;text-align:center;padding:32px;color:var(--mut);min-height:700px}
+.next b{display:block;font:500 30px/1.1 Alegreya,serif;color:var(--ink);margin-bottom:10px}
+.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:56px;padding-top:32px;border-top:1.5px solid var(--line)}
+.cols h4{font:700 20px Alegreya,serif}
+.cols p{color:var(--mut);font-size:16.5px;margin-top:4px}
+footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;margin-top:70px;padding:24px 0 40px;color:var(--mut);font-size:15.5px}
+footer nav{display:flex;gap:24px}
+footer a:hover{color:var(--ink)}
+@media(max-width:820px){
+.hero{grid-template-columns:1fr;gap:20px;padding:44px 0 36px}.hero p{justify-self:start}
+.card,.next{flex-basis:84vw;min-height:660px}
+.cols{grid-template-columns:1fr;gap:22px}
+.arrows{display:none}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <a class="brand" href="/" aria-label="Arakat">arakat</a>
+  <div class="tools">
+    <div class="lang" role="group" aria-label="Language">
+      <button data-l="en" aria-pressed="false">EN</button><button data-l="es" aria-pressed="true">ES</button><button data-l="fr" aria-pressed="false">FR</button>
+    </div>
+    <button class="theme" id="theme" aria-label="Toggle theme"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <h1 data-i="h1">Una pequeña biblioteca de apps útiles.</h1>
+  <p data-i="sub">Aplicaciones y juegos hechos con cuidado. Gratis, sin anuncios y sin cuentas. Elige una y ábrela donde prefieras.</p>
+</section>
+
+<div class="bar"><h2 data-i="shelf">Estantería</h2>
+  <div class="arrows"><button id="prev" aria-label="Previous"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button><button id="nextb" aria-label="Next"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button></div>
+</div>
+
+<div class="rail" id="rail" tabindex="0" aria-label="Apps">
+  <article class="card">
+    <div class="head"><div class="logo"><svg width="34" height="34" viewBox="0 0 40 40"><path d="M26 7a14 14 0 1 0 7 21 11 11 0 0 1-7-21z" fill="#6b6a2f"/></svg></div><span class="st on" data-i="live">Disponible</span></div>
+    <div class="name"><h3>sukun</h3><span data-i="c1">Corán en audio</span></div>
+    <div class="vis" aria-hidden="true"><div class="dev"><div class="scr"><div class="h">sukun</div><div class="r">Al-Fātiḥah<em>الفاتحة</em></div><div class="r">Al-Baqarah<em>البقرة</em></div><div class="r">Āl ʿImrān<em>آل عمران</em></div><div class="r">An-Nisāʾ<em>النساء</em></div></div></div></div>
+    <p class="desc" data-i="d1">El Corán completo, sin distracciones. Cientos de recitaciones, reproducción en segundo plano y cuatro idiomas.</p>
+    <div class="plats"><a class="pl" href="https://sukun.arakat.app">Web<span>sukun.arakat.app</span></a><a class="pl" href="#">Android<span>Google Play</span></a><span class="pl off">iOS<span data-i="soon">Pronto</span></span></div>
+  </article>
+
+  <article class="card">
+    <div class="head"><div class="logo"><svg width="32" height="32" viewBox="0 0 40 40" fill="none" stroke="#9a5b45" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 32S8 24 8 15a6 6 0 0 1 12-2 6 6 0 0 1 12 2c0 9-12 17-12 17z"/></svg></div><span class="st" data-i="wip">En camino</span></div>
+    <div class="name"><h3>Example · Care</h3><span data-i="c2">Bienestar</span></div>
+    <div class="vis" aria-hidden="true"><div class="dev"><div class="scr"><div class="h">Care</div><div class="bl"></div><div class="bl"></div><div class="bl"></div></div></div></div>
+    <p class="desc" data-i="d2">Recordatorios amables para cuidar de los tuyos, sin presión ni rachas.</p>
+    <div class="plats"><span class="pl off">Web<span data-i="soon">Pronto</span></span><span class="pl off">Android<span data-i="soon">Pronto</span></span><span class="pl off">iOS<span data-i="soon">Pronto</span></span></div>
+  </article>
+
+  <article class="card">
+    <div class="head"><div class="logo"><svg width="32" height="32" viewBox="0 0 40 40" fill="none" stroke="#6b6a2f" stroke-width="2.6" stroke-linejoin="round"><rect x="8" y="8" width="24" height="24" rx="7"/><circle cx="15" cy="15" r="1.8" fill="#6b6a2f"/><circle cx="25" cy="25" r="1.8" fill="#6b6a2f"/></svg></div><span class="st" data-i="wip">En camino</span></div>
+    <div class="name"><h3>Example · Dice</h3><span data-i="c3">Juego</span></div>
+    <div class="vis" aria-hidden="true"><div class="dev"><div class="scr"><div class="h">Dice</div><div class="c"></div><div class="c" style="width:44px;height:44px;margin-top:0"></div></div></div></div>
+    <p class="desc" data-i="d3">Un juego de mesa rápido para jugar en familia, lejos de pantallas sobreestimulantes.</p>
+    <div class="plats"><span class="pl off">Web<span data-i="soon">Pronto</span></span><span class="pl off">Android<span data-i="soon">Pronto</span></span><span class="pl off">iOS<span data-i="soon">Pronto</span></span></div>
+  </article>
+
+  <article class="card">
+    <div class="head"><div class="logo"><svg width="32" height="32" viewBox="0 0 40 40" fill="none" stroke="#7a5a2d" stroke-width="2.6" stroke-linecap="round"><circle cx="20" cy="20" r="12"/><path d="M20 12v8l5 3"/></svg></div><span class="st" data-i="wip">En camino</span></div>
+    <div class="name"><h3>Example · Focus</h3><span data-i="c4">Productividad</span></div>
+    <div class="vis" aria-hidden="true"><div class="dev"><div class="scr"><div class="h">Focus</div><div class="c"></div><div class="bl" style="height:10px"></div></div></div></div>
+    <p class="desc" data-i="d4">Un temporizador de enfoque sin notificaciones ni gamificación.</p>
+    <div class="plats"><span class="pl off">Web<span data-i="soon">Pronto</span></span><span class="pl off">Android<span data-i="soon">Pronto</span></span><span class="pl off">iOS<span data-i="soon">Pronto</span></span></div>
+  </article>
+
+  <div class="next"><div><b data-i="nh">El próximo libro</b><span data-i="np">Cada app nueva se añade a esta estantería.</span></div></div>
+</div>
+
+<section class="cols">
+  <div><h4>Web</h4><p data-i="w">Cada app vive en su subdominio. Ábrela sin instalar nada.</p></div>
+  <div><h4>Android</h4><p data-i="an">Instálala desde Google Play, lista para el día a día.</p></div>
+  <div><h4>iOS</h4><p data-i="io">En camino para iPhone y iPad.</p></div>
+</section>
+</main>
+
+<footer><span>© 2026 Arakat</span><nav><a href="/privacy-policy.html" data-i="priv">Privacidad</a><a href="mailto:arakat.contact@gmail.com" data-i="contact">Contacto</a></nav></footer>
+</div>
+
+<script>
+const T={
+en:{h1:"A small library of useful apps.",sub:"Apps and games made with care. Free, ad-free and account-free. Pick one and open it wherever you like.",shelf:"The shelf",live:"Available",wip:"Coming soon",soon:"Soon",c1:"Qur'an audio",c2:"Wellbeing",c3:"Game",c4:"Productivity",d1:"The complete Qur'an, without distractions. Hundreds of recitations, background playback and four languages.",d2:"Gentle reminders to look after your people, with no pressure or streaks.",d3:"A quick board game to play with family, away from overstimulating screens.",d4:"A focus timer with no notifications or gamification.",nh:"The next book",np:"Every new app gets added to this shelf.",w:"Each app lives on its own subdomain. Open it without installing anything.",an:"Install it from Google Play, ready for everyday use.",io:"Coming soon for iPhone and iPad.",priv:"Privacy",contact:"Contact"},
+es:{h1:"Una pequeña biblioteca de apps útiles.",sub:"Aplicaciones y juegos hechos con cuidado. Gratis, sin anuncios y sin cuentas. Elige una y ábrela donde prefieras.",shelf:"Estantería",live:"Disponible",wip:"En camino",soon:"Pronto",c1:"Corán en audio",c2:"Bienestar",c3:"Juego",c4:"Productividad",d1:"El Corán completo, sin distracciones. Cientos de recitaciones, reproducción en segundo plano y cuatro idiomas.",d2:"Recordatorios amables para cuidar de los tuyos, sin presión ni rachas.",d3:"Un juego de mesa rápido para jugar en familia, lejos de pantallas sobreestimulantes.",d4:"Un temporizador de enfoque sin notificaciones ni gamificación.",nh:"El próximo libro",np:"Cada app nueva se añade a esta estantería.",w:"Cada app vive en su subdominio. Ábrela sin instalar nada.",an:"Instálala desde Google Play, lista para el día a día.",io:"En camino para iPhone y iPad.",priv:"Privacidad",contact:"Contacto"},
+fr:{h1:"Une petite bibliothèque d'apps utiles.",sub:"Des applications et des jeux faits avec soin. Gratuits, sans pub et sans compte. Choisissez-en une et ouvrez-la où vous voulez.",shelf:"L'étagère",live:"Disponible",wip:"À venir",soon:"Bientôt",c1:"Coran en audio",c2:"Bien-être",c3:"Jeu",c4:"Productivité",d1:"Le Coran complet, sans distractions. Des centaines de récitations, lecture en arrière-plan et quatre langues.",d2:"Des rappels bienveillants pour prendre soin des siens, sans pression ni séries.",d3:"Un jeu de société rapide à jouer en famille, loin des écrans sur-stimulants.",d4:"Un minuteur de concentration sans notifications ni gamification.",nh:"Le prochain livre",np:"Chaque nouvelle app rejoint cette étagère.",w:"Chaque app vit sur son sous-domaine. Ouvrez-la sans rien installer.",an:"Installez-la depuis Google Play, prête pour le quotidien.",io:"Bientôt pour iPhone et iPad.",priv:"Confidentialité",contact:"Contact"}};
+function setLang(l){document.documentElement.lang=l;document.querySelectorAll('[data-i]').forEach(e=>e.textContent=T[l][e.dataset.i]);document.querySelectorAll('.lang button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.l===l))}
+document.querySelectorAll('.lang button').forEach(b=>b.onclick=()=>setLang(b.dataset.l));
+document.getElementById('theme').onclick=()=>{const r=document.documentElement;r.dataset.theme=r.dataset.theme==='dark'?'light':'dark'};
+const rail=document.getElementById('rail');
+document.getElementById('prev').onclick=()=>rail.scrollBy({left:-362,behavior:'smooth'});
+document.getElementById('nextb').onclick=()=>rail.scrollBy({left:362,behavior:'smooth'});
+</script>
+</body>
+</html>
