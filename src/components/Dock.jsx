@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useTheme } from '../context/hooks'
 import { t } from '../i18n/translations'
 
 function FallbackIcon({ color, name }) {
@@ -22,10 +23,26 @@ function FallbackIcon({ color, name }) {
 }
 
 function AppIcon({ app, lang }) {
+  const { theme } = useTheme()
   const [hasError, setHasError] = useState(false)
-  const logoSrc = `/apps/${app.id}/logo.png`
+  const [hasDarkError, setHasDarkError] = useState(false)
+
+  const isDark = theme === 'dark'
+  const lightSrc = app.logo || `/apps/${app.id}/logo.png`
+  const darkSrc = app.logoDark || `/apps/${app.id}/logo_darkmode.png`
+
   const name = app[lang]?.name ?? app.en.name
   const altText = t(lang, 'img_logo_alt', { name })
+
+  const currentSrc = isDark && !hasDarkError ? darkSrc : lightSrc
+
+  const handleError = () => {
+    if (isDark && !hasDarkError) {
+      setHasDarkError(true)
+    } else {
+      setHasError(true)
+    }
+  }
 
   if (hasError) {
     return <FallbackIcon color={app.color} name={name} />
@@ -33,9 +50,10 @@ function AppIcon({ app, lang }) {
 
   return (
     <img
-      src={logoSrc}
+      key={currentSrc}
+      src={currentSrc}
       alt={altText}
-      onError={() => setHasError(true)}
+      onError={handleError}
       loading="lazy"
       decoding="async"
     />

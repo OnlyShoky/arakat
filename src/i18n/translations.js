@@ -1,7 +1,7 @@
 export const translations = {
   en: {
     nav_brand: 'arakat.app',
-    hero_sub: 'Apps and games with nothing to prove. Useful, free and free of noise.',
+    hero_sub: 'Apps with nothing to prove. Useful, free and free of noise.',
     pillar_web_title: 'Web',
     pillar_web_desc: 'Open any app from its subdomain, nothing to install.',
     pillar_android_title: 'Android',
@@ -27,7 +27,7 @@ export const translations = {
   },
   es: {
     nav_brand: 'arakat.app',
-    hero_sub: 'Aplicaciones y juegos que no tienen nada que demostrar. Útiles, gratuitas y sin ruido.',
+    hero_sub: 'Aplicaciones que no tienen nada que demostrar. Útiles, gratuitas y sin ruido.',
     pillar_web_title: 'Web',
     pillar_web_desc: 'Abre cualquier app desde su subdominio, sin instalar nada.',
     pillar_android_title: 'Android',
@@ -53,7 +53,7 @@ export const translations = {
   },
   fr: {
     nav_brand: 'arakat.app',
-    hero_sub: 'Des applications et des jeux qui n\'ont rien à prouver. Utiles, gratuits et sans bruit.',
+    hero_sub: 'Des applications qui n\'ont rien à prouver. Utiles, gratuits et sans bruit.',
     pillar_web_title: 'Web',
     pillar_web_desc: 'Ouvrez chaque app depuis son sous-domaine, sans rien installer.',
     pillar_android_title: 'Android',

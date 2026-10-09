@@ -66,9 +66,10 @@ arakat/
 
 El catálogo se gestiona de forma centralizada en [`src/data/apps.js`](file:///D:/Proyectos/Webpages/arakat/src/data/apps.js):
 
-1. **Logo**: Añade el icono en `/public/apps/<id>/logo.png` (512×512 px, PNG/WebP, ≤100 KB).
-2. **Screenshot**: Añade la captura o mockup en `/public/apps/<id>/screenshot.png` (390×844 px o 750×1334 px, ≤200 KB).
-3. **Registro**: Añade una entrada en `APPS` en `src/data/apps.js`:
+1. **Logo claro**: Añade el icono para modo claro en `/public/apps/<id>/logo.png` (512×512 px, PNG/WebP, ≤100 KB).
+2. **Logo oscuro**: Añade el icono para modo oscuro en `/public/apps/<id>/logo_darkmode.png` (512×512 px, PNG/WebP, ≤100 KB). Si una app no cuenta aún con versión oscura, el sistema usará automáticamente el logo estándar como fallback.
+3. **Screenshot**: Añade la captura o mockup en `/public/apps/<id>/screenshot.png` (390×844 px o 750×1334 px, ≤200 KB).
+4. **Registro**: Añade una entrada en `APPS` en `src/data/apps.js`:
    ```javascript
    {
      id: 'mi-app',
