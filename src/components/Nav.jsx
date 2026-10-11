@@ -33,8 +33,7 @@ export function Nav() {
   return (
     <nav className="nav" role="navigation">
       <a href="/" className="nav__brand" aria-label="Arakat">
-        <ArakatLogo size={24} className="nav__logo" />
-        <span>{t(lang, 'nav_brand')}</span>
+        <ArakatLogo size={28} className="nav__logo" />
       </a>
       <div className="nav__tools">
         <div className="lang" role="group" aria-label={t(lang, 'aria_lang')}>

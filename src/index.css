@@ -13,10 +13,11 @@
   --dev:    #1d2935;
   --scr:    #f4f6f7;
   --shadow: rgba(29, 41, 53, 0.10);
-  --font-serif: 'Cormorant Garamond', Georgia, serif;
-  --font-sans:  'Karla', system-ui, sans-serif;
-  --radius-icon: 24px;
-  --transition: 0.3s ease;
+  --font-serif:   'Cormorant Garamond', Georgia, serif;
+  --font-sans:    'Karla', system-ui, sans-serif;
+  --font-display: 'Outfit', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --radius-icon:  24px;
+  --transition:   0.3s ease;
 }
 
 [data-theme='dark'] {
@@ -81,21 +82,18 @@ button { font-family: inherit; }
 .nav__brand {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  font: 700 15px / 1 var(--font-sans);
-  letter-spacing: 0.02em;
   color: var(--ink);
-  transition: opacity 0.2s;
+  padding: 2px;
+  border-radius: 8px;
+  transition: opacity 0.2s, transform 0.2s;
 }
 .nav__brand:hover {
-  opacity: 0.85;
+  opacity: 0.75;
+  transform: scale(1.05);
 }
 .nav__logo {
+  display: block;
   color: var(--ink);
-  transition: transform 0.25s ease;
-}
-.nav__brand:hover .nav__logo {
-  transform: translateY(-1px);
 }
 .nav__tools {
   display: flex;
@@ -141,28 +139,16 @@ button { font-family: inherit; }
 /* ── Hero ── */
 .hero {
   text-align: center;
-  padding: 72px 0 56px;
-}
-.hero__emblem {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 16px;
-}
-.hero__logo {
-  color: var(--ink);
-  opacity: 0.95;
-  transition: transform 0.3s ease, color var(--transition);
-}
-.hero__logo:hover {
-  transform: translateY(-3px) scale(1.05);
+  padding: 84px 0 52px;
 }
 .hero__word {
-  font: 500 clamp(84px, 17vw, 190px) / 0.9 var(--font-serif);
-  letter-spacing: -0.03em;
+  font: 500 clamp(72px, 15vw, 154px) / 0.95 var(--font-display);
+  letter-spacing: -0.04em;
   color: var(--ink);
+  text-transform: lowercase;
 }
 .hero__sub {
-  margin: 30px auto 0;
+  margin: 28px auto 0;
   max-width: 480px;
   color: var(--mut);
   font-size: 18px;
@@ -381,14 +367,6 @@ a.plat:hover { color: var(--brass); }
   border-top: 1px solid var(--line);
   color: var(--mut);
   font-size: 14px;
-}
-.footer__brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-}
-.footer__logo {
-  color: var(--mut);
 }
 .footer__nav {
   display: flex;
